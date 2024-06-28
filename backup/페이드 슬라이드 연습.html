@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- <link rel="stylesheet" href="css/3d-layer-btn.css"> -->
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+
+        .slideshow-container {
+            max-width: 1500px;
+            /* width: 100vw; */
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;            
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btns {
+            margin: 0 auto;
+            width: fit-content;
+            height: fit-content;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade layer-btn">
+            <img src="img/미나1.jpg" style="width:100%">
+            <div class="text">TASK</div>
+        </div>
+
+        <div class="mySlides fade layer-btn">
+            <img src="img/미나2.jpg" style="width:100%">
+            <div class="text">COMMUNITY</div>
+        </div>
+
+        <div class="mySlides fade layer-btn">
+            <img src="img/미나3.jpg" style="width:100%">
+            <div class="text">ART GALLERY</div>
+        </div>
+
+        <div class="mySlides fade layer-btn">
+            <img src="img/미나4.jpg" style="width:100%">
+            <div class="text">PROFILE</div>
+        </div>
+
+        <div class="mySlides fade layer-btn">
+            <img src="img/미나5.jpg" style="width:100%">
+            <div class="text">HOME</div>
+        </div>
+
+        <div class="mySlides fade layer-btn">
+            <img src="img/미나6.jpg" style="width:100%">
+            <div class="text">ENGLISH</div>
+        </div>
+
+        <div class="mySlides fade layer-btn">
+            <img src="img/미나7.jpg" style="width:100%">
+            <div class="text">WISE SAYING</div>
+        </div>
+
+        <div class="mySlides fade layer-btn">
+            <img src="img/미나8.jpg" style="width:100%">
+            <div class="text">HEALTH</div>
+        </div>
+
+        <div class="mySlides fade layer-btn">
+            <img src="img/미나9.jpg" style="width:100%">
+            <div class="text">FINANCE</div>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="btns">
+        <button onclick="currentSlide(1)">미나1</button>
+        <button onclick="currentSlide(2)">미나2</button>
+        <button onclick="currentSlide(3)">미나3</button>
+        <button onclick="currentSlide(4)">미나4</button>
+        <button onclick="currentSlide(5)">미나5</button>
+        <button onclick="currentSlide(6)">미나6</button>
+        <button onclick="currentSlide(7)">미나7</button>
+        <button onclick="currentSlide(8)">미나8</button>
+        <button onclick="currentSlide(9)">미나9</button>
+    </div>
+
+    <script>
+
+        let slideIndex = 5;
+
+        showSlides(slideIndex);
+
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+        }
+
+    </script>
+
+</body>
+
+</html>

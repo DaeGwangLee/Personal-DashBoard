@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        /* Set height of body and the document to 100% */
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial;
+        }
+
+        /* Style tab links */
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+        }
+
+        .tablink:hover {
+            background-color: #777;
+        }
+
+        /* Style the tab content (and add height:100% for full page content) */
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 100px 20px;
+            height: 100%;
+        }
+
+        #Home {
+            background-color: red;
+        }
+
+        #News {
+            background-color: green;
+        }
+
+        #Contact {
+            background-color: blue;
+        }
+
+        #About {
+            background-color: orange;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .circle-progress {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .circle-progress .html-rating {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* background: #f00; */
+        }
+
+        .circle-progress .html-rating .html-block {
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background-color: #000;
+            left: 50%;
+            transform-origin: 50% 100px;
+            /* transform: rotate(15deg); */
+            transform: rotate(0deg);
+            opacity: 0;
+            animation: animate 0.1s linear forwards;
+        }
+
+        @keyframes animate {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .circle-progress .html-rating .html-block:nth-child(-n+91) {
+            background: #ff4433;
+            box-shadow: 0 0 15px #ff4433, 0 0 30px #ff4433;
+        }
+
+        .circle-progress .html-rating h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.5em;
+        }
+
+        .circle-progress .html-rating h2 span {
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .circle-progress .html-rating h2 sup {
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
+    <button class="tablink news" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button>
+    <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
+    <button class="tablink" onclick="openPage('About', this, 'orange')">About</button>
+
+    <div id="Home" class="tabcontent">
+        <h3>Home</h3>
+        <p>Home is where the heart is..</p>
+    </div>
+
+    <div id="News" class="tabcontent">
+        <h3>News</h3>
+        <p>Some news this fine day!</p>
+
+        <div class="circle-progress">
+            <div class="html-rating">
+                <h2>
+                    <span class="html-counter" data-target="90">
+                        90
+                    </span>
+                    <sup>
+                        %
+                    </sup>
+                    <br>
+                    HTML
+                </h2>
+                <div class="html-block"></div>
+            </div>
+        </div>
+
+        <button class="btn">
+            버튼
+        </button>
+
+
+    </div>
+
+    
+
+    <div id="Contact" class="tabcontent">
+        <h3>Contact</h3>
+        <p>Get in touch, or swing by for a cup of coffee.</p>
+    </div>
+
+    <div id="About" class="tabcontent">
+        <h3>About</h3>
+        <p>Who we are and what we do.</p>
+    </div>
+
+    <script>
+
+
+
+
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
+        }
+
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+
+
+
+
+
+
+
+
+
+
+
+        const btn = document.querySelector('.btn');
+        const news = document.querySelector('.news');
+
+        news.addEventListener('click', ()=>{
+
+        const htmlRating = document.getElementsByClassName('html-rating')[0];
+        const htmlBlock = document.getElementsByClassName('html-block');
+
+        for (let i = 1; i < 100; i++) {
+            htmlRating.innerHTML += "<div class='html-block'></div>";
+            htmlBlock[i].style.transform = "rotate(" + 3.6 * i + "deg)";
+            htmlBlock[i].style.animationDelay = `${i / 40}s`;
+        }
+
+        const htmlCounter = document.querySelector('.html-counter');
+        htmlCounter.innerText = 0;
+
+        const htmlTarget = +htmlCounter.getAttribute('data-target');
+
+        const htmlNumberCounter = () => {
+
+            const htmlValue = +htmlCounter.innerText;
+
+            if (htmlValue < htmlTarget) {
+                htmlCounter.innerText = Math.ceil(htmlValue + 1);
+
+                setTimeout(() => {
+                    htmlNumberCounter()
+                }, 25);
+            }
+        }
+
+        htmlNumberCounter();
+
+    });
+    </script>
+
+</body>
+
+</html>

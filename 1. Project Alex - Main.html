@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/interaction.css">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    <link rel="stylesheet" href="css/3d-layer-btn.css">
+    <link rel="stylesheet" href="css/profile-accordion.css">
+    <link rel="stylesheet" href="css/circle-progress.css">
+    <link rel="stylesheet" href="css/btns.css">
+
+</head>
+
+<body>
+
+    <div id="loading-screen">
+        <div class="loading-circle-container">
+            <div class="loading-circle"></div>
+            <div class="loading-text-container">
+                <h1>Loading....</h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="background-container">
+        <video muted autoplay loop>
+            <source src="video/future city.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="dashboard">
+        <div class="dashboard-total-container">
+
+            <!-- <div class="info-window-container"> -->
+            <div class="info-window glassmorphism-box">
+
+                <!-- order 1 -->
+                <div class="inner-box fade task">
+                    <img class="coming-soon" src="img/COMING SOON.png" alt="">
+                </div>
+
+                <!-- order 2 -->
+                <div class="inner-box fade community">
+                    <img class="coming-soon" src="img/COMING SOON.png" alt="">
+                </div>
+
+                <!-- order 3 -->
+                <div class="inner-box fade art-gallery">
+                    <div class="title-container">
+                        <h2 class="title">ART GALLERY</h2>
+                    </div>
+
+                    <div class="art-box">
+
+                        <!-- No.1 -->
+                        <div></div>
+                        <!-- No.2 -->
+                        <div></div>
+                        <!-- No.3 -->
+                        <div></div>
+                        <!-- No.4 -->
+                        <div></div>
+                        <!-- No.5 -->
+                        <div></div>
+                        <!-- No.6 -->
+                        <div></div>
+                        <!-- No.7 -->
+                        <div></div>
+                        <!-- No.8 -->
+                        <div></div>
+
+                    </div>
+
+                    <!-- <img class="coming-soon" src="img/COMING SOON.png" alt=""> -->
+                </div>
+
+                <!-- order 4 -->
+                <div class="inner-box fade profile">
+
+                    <div class="title-container">
+                        <h2 class="title">PROFILE</h2>
+                    </div>
+
+                    <div class="accordion-container">
+                        <div class="profile-accordion">
+                            <div class="accordion-card basic">
+                                <div class="card-name">
+                                    <h3>BASIC INFO</h3>
+                                    <p>기본정보</p>
+                                </div>
+                                <div class="accordion-image">
+                                    <!-- <img src="img/taj-mahal.jpg" class="accordion-image"> -->
+                                    <img src="img/유진 초이.jpg">
+                                </div>
+                                <div class="accordion-layer">
+                                    <div class="accordion-info basic">
+                                        <div class="info-title">
+                                            <h3>BASIC INFO</h3>
+                                            <!-- <div class="profile-picture"></div> -->
+                                        </div>
+                                        <div class="info-content">
+                                            <div class="item">
+                                                <p>
+                                                    Name
+                                                </p>
+                                                <p class="name">
+                                                    D.G. LEE
+                                                </p>
+                                            </div>
+                                            <div class="item">
+                                                <p>
+                                                    Birth
+                                                </p>
+                                                <p class="birth">
+                                                    1986. 11. 7.
+                                                </p>
+                                            </div>
+                                            <div class="item">
+                                                <P>
+                                                    E-Mail
+                                                </P>
+                                                <p class="e-mail">
+                                                    luxrobertus@naver.com
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-card skill-accordion-card">
+                                <div class="card-name">
+                                    <h3>SKILLS</h3>
+                                    <p>전문기술</p>
+                                </div>
+
+                                <div class="accordion-image">
+                                    <!-- <img src="img/marina-bay.jpg" class="accordion-image"> -->
+                                    <img src="img/스킬.jpg">
+                                </div>
+                                <div class="accordion-layer">
+
+                                    <div class="accordion-info skills">
+                                        <div class="info-title">
+                                            <h3>SKILLS</h3>
+                                            <div class="boosting-on-container">
+                                                <div class="boosting-on-container">
+                                                    <div class="center">
+                                                        <div class="outer button">
+                                                            <button class="boosting-on">Boost-On</button>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </div>
+                                                        <!-- <div class="outer circle">
+                                                                <button class="boosting-on">Boosting-On</button>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div> -->
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="circle-progress-container">
+
+                                            <div class="html-circle-progress">
+                                                <div class="html-rating">
+                                                    <h2>
+                                                        <span class="html-counter" data-target="90">
+                                                            0
+                                                        </span>
+                                                        <sup>
+                                                            %
+                                                        </sup>
+                                                        <br>
+                                                        HTML
+                                                    </h2>
+                                                    <div class="html-block"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="css-circle-progress">
+                                                <div class="css-rating">
+                                                    <h2>
+                                                        <span class="css-counter" data-target="65">
+                                                            0
+                                                        </span>
+                                                        <sup>
+                                                            %
+                                                        </sup>
+                                                        <br>
+                                                        CSS
+                                                    </h2>
+                                                    <div class="css-block"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="js-circle-progress">
+                                                <div class="js-rating">
+                                                    <h2>
+                                                        <span class="js-counter" data-target="55">
+                                                            0
+                                                        </span>
+                                                        <sup>
+                                                            %
+                                                        </sup>
+                                                        <br>
+                                                        JAVASCRIPT
+                                                    </h2>
+                                                    <div class="js-block"></div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-card">
+                                <div class="card-name">
+                                    <h3>LICENSES</h3>
+                                    <p>자격증</p>
+                                </div>
+                                <div class="accordion-image">
+                                    <!-- <img src="img/great-wall.jpg" class="accordion-image"> -->
+                                    <img src="img/자격증.jpg">
+                                </div>
+                                <div class="accordion-layer">
+                                    <div class="accordion-info">
+                                        <div class="info-title">
+                                            <h3>LICENSES</h3>
+                                        </div>
+
+                                        <div class="license-container">
+                                            <a href="#">Industrial Engineer Information Communication</a>
+                                            <a href="#">Computer Specialist in Spreadsheet & Database Level-2</a>
+                                            <a href="#">Certified Distribution Management</a>
+                                            <a href="#">Craftsman Information Equipment Operation</a>
+                                            <a href="#">Taekwondo 3rd Dan</a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-card">
+                                <div class="card-name">
+                                    <h3>VALUES</h3>
+                                    <p>가치관</p>
+                                </div>
+                                <div class="accordion-image">
+                                    <!-- <img src="img/statue-liberty.jpg" class="accordion-image"> -->
+                                    <img src="img/가치관(감사).jpg">
+                                </div>
+                                <div class="accordion-layer">
+                                    <div class="accordion-info">
+                                        <div class="info-title">
+                                            <h3>VALUES</h3>
+                                        </div>
+                                        <div class="value-container">
+                                            <a href="#" class="value one">
+                                                <i></i><i></i><span>매너가 사람을 만든다.</span>
+                                            </a>
+                                            <a href="#" class="value two">
+                                                <i></i><i></i><span>최상의 선은 물과 같다.</span>
+                                            </a>
+                                            <a href="#" class="value three">
+                                                <i></i><i></i><span>몸을 굽혀 모든 힘을 다하며,<br>
+                                                    죽은 후에야 그만둔다.</span>
+                                            </a>
+                                            <a href="#" class="value four">
+                                                <i></i><i></i><span>천강대임론</span>
+                                            </a>
+                                            <a href="#" class="value five">
+                                                <i></i><i></i><span>금연, 금주</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-card">
+                                <div class="card-name">
+                                    <h3>CHARACTER</h3>
+                                    <p>성격</p>
+                                </div>
+                                <div class="accordion-image">
+                                    <!-- <img src="img/fuji-mountain.jpg" class="accordion-image"> -->
+                                    <img src="img/성격(MBTI).png">
+                                </div>
+                                <div class="accordion-layer">
+                                    <div class="accordion-info">
+                                        <div class="info-title">
+                                            <h3>CHARACTER</h3>
+                                        </div>
+
+                                        <div class="character-container">
+
+                                            <div class="mbti">
+                                                <p>INTJ</p>
+                                            </div>
+
+                                            <button>
+                                                <span class="text">IRON WILL</span>
+                                                <p class="korean-text">불굴의 의지</p>
+                                                <span class="shimmer"></span>
+                                            </button>
+
+                                            <button>
+                                                <span class="text">LOYALTY</span>
+                                                <p class="korean-text">충실함</p>
+                                                <span class="shimmer"></span>
+                                            </button>
+
+                                            <button>
+                                                <span class="text">TOLERANCE</span>
+                                                <p class="korean-text">포용력</p>
+                                                <span class="shimmer"></span>
+                                            </button>
+
+                                            <div class="mbti">
+                                                <p>INFP</p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- order 5 -->
+                <div class="inner-box fade home">
+                    <img src="img/WELCOME.png" alt="" class="home">
+                </div>
+
+                <!-- order 6 -->
+                <div class="inner-box fade english">
+                    <img class="coming-soon" src="img/COMING SOON.png" alt="">
+                </div>
+
+                <!-- order 7 -->
+                <div class="inner-box fade wise-saying">
+                    <img class="coming-soon" src="img/COMING SOON.png" alt="">
+                </div>
+
+                <!-- order 8 -->
+                <div class="inner-box fade health">
+                    <img class="coming-soon" src="img/COMING SOON.png" alt="">
+                </div>
+
+                <!-- order 9 -->
+                <div class="inner-box fade finance">
+                    <img class="coming-soon" src="img/COMING SOON.png" alt="">
+                </div>
+
+            </div>
+            <!-- </div> -->
+
+            <div class="control-container">
+
+                <div class="control-left">
+                    <div class="btn-container glassmorphism-box">
+                        <button class="layer-btn control-btn task" onclick="currentSlide(1)">TASK</button>
+                        <button class="layer-btn control-btn community" onclick="currentSlide(2)">COMMUNITY</button>
+                        <button class="layer-btn control-btn art-gallery" onclick="currentSlide(3)">ART GALLERY</button>
+                        <button class="layer-btn control-btn profile" onclick="currentSlide(4)">PROFILE</button>
+                    </div>
+                </div>
+
+                <div class="control-center">
+
+                    <div class="rabbit-container">
+                        <button class="rabbit-btn control-btn" onclick="currentSlide(5)">
+                            <img src="img/rabbit.png" alt="">
+                        </button>
+                    </div>
+
+                    <div class="pulse-container">
+                        <div class="pulse">
+                            <span style="--i:0;"></span>
+                            <span style="--i:1;"></span>
+                            <span style="--i:2;"></span>
+                            <span style="--i:3;"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="control-right">
+                    <div class="btn-container glassmorphism-box">
+                        <button class="layer-btn control-btn english" onclick="currentSlide(6)">ENGLISH</button>
+                        <button class="layer-btn control-btn wise-saying" onclick="currentSlide(7)">WISE SAYING</button>
+                        <button class="layer-btn control-btn health" onclick="currentSlide(8)">HEALTH</button>
+                        <button class="layer-btn control-btn finance" onclick="currentSlide(9)">FINANCE</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="js/alex-script.js"></script>
+</body>
+
+</html>
