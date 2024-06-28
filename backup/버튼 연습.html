@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    /* @import url() */
+
+    :root {
+            --x: 45deg;
+        }
+
+    .boosting-on-container {
+
+        a.boosting-on {
+            position: relative;
+            width: 150px;
+            height: 55px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+
+        a.boosting-on i {
+            position: absolute;
+            inset: -2px;
+            display: block;
+            border-radius: 5px;
+        }
+
+        a.boosting-on i,
+        a.boosting-on i:nth-child(2) {
+            background: linear-gradient(var(--x), #00ccff, #0e1538, #0e1538, #d400d4);
+        }
+
+        a.boosting-on i:nth-child(1) {
+            filter: blur(10px);
+        }
+
+        a.boosting-on span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            color: #fff;
+            letter-spacing: 2px;
+            border: 1px solid #040a29;
+            border-radius: 3px;
+            background: rgba(14, 21, 56, 0.65);
+            overflow: hidden;
+        }
+
+        a.boosting-on span::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.075);
+            transform: skew(25deg);
+        }
+    }
+</style>
+
+<body>
+
+    <div class="boosting-on-container">
+        <a href="#" class="boosting-on">
+            <i></i>
+            <i></i>
+            <span>Boosting-On!</span>
+        </a>
+    </div>
+
+    <script>
+
+        let boostingOn = document.querySelector('.boosting-on');
+        boostingOn.addEventListener('mousemove', e => {
+            let rect = e.target.getBoundingClientRect();
+            let x = e.clientX * 3 - rect.left;
+            boostingOn.style.setProperty('--x', x + 'deg');
+        });
+        
+    </script>
+
+
+
+</body>
+
+</html>

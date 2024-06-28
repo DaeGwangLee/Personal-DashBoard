@@ -1,0 +1,255 @@
+:root {
+    --color-cyber-blue: #00a7f6;
+    --color-cyber-black: #040713;
+    --color-cyber-transparent-black: rgba(0, 0, 0, 0.8);
+}
+
+/* 경기천년제목 */
+@font-face {
+    font-family: 'GyeonggiTitleM';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/GyeonggiTitleM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.inner-box.home {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.accordion-container {
+    /* width: calc(100% - 20*2);
+    margin: 0 20px; */
+    width: 100%;
+    height: calc(100% - 66px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 16px;
+    background-position: cover;
+    box-sizing: border-box;
+    /* border: 1px solid blue; */
+}
+
+.profile-accordion {
+    width: calc(100% - 20*2);
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    transition: 0.5s;
+    margin: 0 auto;
+}
+
+.accordion-card {
+    width: 20%;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.5s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+
+
+    .card-name {
+        width: 90%;
+        height: 54px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        bottom: 16px;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* background-color: transparent; */
+        /* padding: 8px 0; */
+        /* border: 1px solid red; */
+        border-radius: 54px;
+
+        h3 {
+            font-size: 20px;
+            color: #fff;
+            font-weight: bold;
+            /* text-align: center;
+            margin: 0 auto; */
+        }
+
+        p {
+            font-size: 18px;
+            color: #C0C0C0;
+            font-family: 'GyeonggiTitleM';
+            /* text-align: center;
+            margin: 0 auto; */
+        }
+    }
+
+    .accordion-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .accordion-layer {
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        position: absolute;
+        opacity: 0;
+        transition: 0.5s;
+        padding: 8px;
+        box-sizing: border-box;
+        background: rgba(0, 0, 0, 0.9);
+
+        .accordion-info {
+
+            width: 100%;
+            bottom: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+
+            div.info-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h3 {
+                    font-size: 40px;
+                }                
+            }
+
+            /* .license-container {
+                
+            } */
+
+            div>h3 {
+                color: white;
+                font-size: 24px;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+        }
+
+        .accordion-info.basic {
+            width: 100%;
+
+            /* div.info-title {
+                h3 {
+                    font-size: 40px;
+                }
+            } */
+
+            div.info-content {
+                /* border: 1px solid red; */
+                bottom: 5%;
+                position: absolute;
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                align-items: end;
+                height: 200px;
+
+                div.item {
+
+                    p:first-of-type {
+                        font-size: 20px;
+                        color: var(--color-cyber-blue);
+                        font-weight: bold;
+                    }
+
+                    p.name,
+                    p.birth,
+                    p.e-mail {
+                        font-size: 24px;
+                        color: #fff;
+                        width: 22ch;
+                        white-space: nowrap;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+
+        /* .accordion-info.skills {
+            
+        } */
+    }
+}
+
+.accordion-card:hover {
+    width: 80%;
+
+
+
+
+    .accordion-image {
+        transform: scale(1.2);
+    }
+
+    .accordion-layer {
+        opacity: 1;
+
+
+        .accordion-info {
+            opacity: 1;
+        }
+
+
+    }
+}
+
+
+
+.accordion-card.basic:hover {
+    .accordion-info.basic {
+        div.info-content {
+            div.item {
+                p.name {
+                    /* animation: typing 2s steps(22), blink .5s step-end infinite alternate; */
+                    animation: typing 2s steps(22);
+                }
+
+                p.birth {
+                    /* animation: typing 2s steps(22), blink .5s step-end infinite alternate; */
+                    animation: typing 2s steps(22);
+                }
+
+                p.e-mail {
+                    /* animation: typing 2s steps(22), blink .5s step-end infinite alternate;                         */
+                    animation: typing 2s steps(22);
+                }
+            }
+        }
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+        border-right: 3px solid;
+    }
+}
+
+
+
+
+
+
+
+
+
+.skill-accordion-card.on {
+    content: "";
+}

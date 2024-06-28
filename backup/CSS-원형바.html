@@ -1,0 +1,136 @@
+<!DOCTYPE css>
+<css lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: radial-gradient(#444, #222);
+        }
+
+        .circle-progress {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .circle-progress .css-rating {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* background: #f00; */
+        }
+
+        .circle-progress .css-rating .css-block {
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background-color: #000;
+            left: 50%;
+            transform-origin: 50% 100px;
+            /* transform: rotate(15deg); */
+            transform: rotate(0deg);
+            opacity: 0;
+            animation: animate 0.1s linear forwards;
+        }
+
+        @keyframes animate {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .circle-progress .css-rating .css-block:nth-child(-n+66) {
+            background: #00a7f6;
+            box-shadow: 0 0 15px #00a7f6,0 0 30px #00a7f6;
+        }
+
+        .circle-progress .css-rating h2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: 500;
+            text-align: center;
+            line-height: 1.5em;
+        }
+
+        .circle-progress .css-rating h2 span {
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .circle-progress .css-rating h2 sup {
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="circle-progress">
+        <div class="css-rating">
+            <h2>
+                <span class="css-counter" data-target="65">
+                    65
+                </span>
+                <sup>
+                    %
+                </sup>
+                <br>
+                CSS
+            </h2>
+            <div class="css-block"></div>
+        </div>
+    </div>    
+
+    <script>
+
+        const cssRating = document.getElementsByClassName('css-rating')[0];
+        const cssBlock = document.getElementsByClassName('css-block');
+
+        for (let i = 1; i < 100; i++) {
+            cssRating.innerHTML += "<div class='css-block'></div>";
+            cssBlock[i].style.transform = "rotate("+ 3.6 * i + "deg)";
+            cssBlock[i].style.animationDelay = `${i/40}s`;
+        }
+
+        const cssCounter = document.querySelector('.css-counter');
+        cssCounter.innerText = 0;
+
+        const cssTarget = +cssCounter.getAttribute('data-target');
+
+        const cssNumberCounter = () => {
+
+            const cssValue = +cssCounter.innerText;
+
+            if (cssValue < cssTarget) {
+                cssCounter.innerText = Math.ceil(cssValue + 1);
+
+                setTimeout(() => {
+                    cssNumberCounter()
+                }, 25);
+            }
+        }
+
+        cssNumberCounter();
+
+    </script>
+
+</body>
+
+</css>

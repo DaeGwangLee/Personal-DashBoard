@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background: #282828;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .three-dimension-layer-btn {
+            border: none;
+            outline: none;
+            padding: 13px 16px;
+            font-size: 18px;
+            background: #fff;
+            color: #000;
+            border-radius: 2px;
+            box-shadow: 0 0 10px #fff;
+            margin: 20px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+            cursor: pointer;            
+        }
+        .three-dimension-layer-btn:before,
+        .three-dimension-layer-btn:after {
+            content: 'HELLO!!!!';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            background: inherit;
+            opacity: 0.8;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }        
+
+        .three-dimension-layer-btn:hover {
+            transform: skew(20deg) rotateX(20deg) rotateY(20deg) rotateZ(10deg) translateY(-20px);
+            background: #2196F3;
+            box-shadow: 0 0 10px #2196F3;
+            color: #fff;
+        }
+        .three-dimension-layer-btn:hover:before {
+            transform: perspective(1000px) translateZ(25px);
+        }
+        .three-dimension-layer-btn:hover:after {
+            transform: perspective(1000px) translateZ(50px);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+        <button class="three-dimension-layer-btn">HELLO!!!</button>
+        <button class="three-dimension-layer-btn red">HELLO!!!</button>
+        <button class="three-dimension-layer-btn blue">HELLO!!!</button>
+        <button class="three-dimension-layer-btn green">HELLO!!!</button>
+    </div>
+
+</body>
+
+</html>
