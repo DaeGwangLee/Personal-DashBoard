@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="12;url=1. Project Alex - Main.html">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        :root {
+            --color-cyber-blue: #00a7f6;
+            --color-cyber-black: #040713;
+            --color-cyber-transparent-black: rgba(0, 0, 0, 0.8);
+        }
+
+        body {
+            background-color: var(--color-cyber-black)
+        }
+
+        /* 여기서부터 복사 */
+
+        #intro {
+            width: 100%;
+            height: 100vh;            
+            overflow: hidden;            
+            box-sizing: border-box;
+
+            .intro-container {
+                width: 100%;
+                height: 100%;                
+
+                video {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section id="intro">
+        <div class="intro-container">
+            <video src="video/Project Alex intro.mp4" autoplay muted></video>
+        </div>
+    </section>    
+
+</body>
+
+</html>
